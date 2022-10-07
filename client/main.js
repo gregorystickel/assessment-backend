@@ -26,7 +26,8 @@ const deleteFortune = () => {
     axios.delete("http://localhost:4000/api/fortune/")
         .then(res => {
             const message = "Fortune Deleted";
-            alert(message);
+            const data = res.data;
+            alert(message + " " + data);
     });
 };
 
@@ -41,7 +42,8 @@ const addFortune = (e) => {
         .then
         (res => {
             const message = "Fortune Added";
-            alert(message);
+            const data = res.data;
+            alert(message + " " + data);
     });
 };
 
@@ -50,8 +52,9 @@ const getAllFortune = () => {
     axios.get("http://localhost:4000/api/fortunes/")
         .then
         (res => {
+            const data = res.data;
             const message = "All fortunes retieved";
-            alert(message);
+            alert(message + " " + data);
     });
 };
 
